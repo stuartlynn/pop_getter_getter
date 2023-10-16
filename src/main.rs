@@ -58,7 +58,8 @@ fn get_metrics()->Result<DataFrame>{
     Ok(df)
 }
 
-fn main() ->Result<()>{
+#[tokio::main]
+async fn main() ->Result<()>{
     let args = Cli::parse();
     println!("Trying to get metrics");
     get_metrics()?;
